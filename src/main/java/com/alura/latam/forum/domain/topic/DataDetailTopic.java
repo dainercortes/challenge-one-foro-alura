@@ -9,7 +9,7 @@ public record DataDetailTopic(
         Long id,
         String title,
         String message,
-        LocalDateTime creation_date,
+        LocalDateTime creationDate,
         StatusTopic status,
         String author,
         String course,

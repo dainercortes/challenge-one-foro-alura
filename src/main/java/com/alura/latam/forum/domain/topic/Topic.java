@@ -27,7 +27,7 @@ public class Topic {
     private Long id;
     private String title;
     private String message;
-    private LocalDateTime creation_date;
+    private LocalDateTime creationDate;
 
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
@@ -47,10 +47,10 @@ public class Topic {
     private List<Response> responses = new ArrayList<>();
 
 
-    public Topic(String title, String message, LocalDateTime creation_date, User author, Course course) {
+    public Topic(String title, String message, LocalDateTime creationDate, User author, Course course) {
         this.title = title;
         this.message = message;
-        this.creation_date = creation_date;
+        this.creationDate = creationDate;
         this.status = StatusTopic.NO_RESPONDIDO;
         this.author = author;
         this.course = course;

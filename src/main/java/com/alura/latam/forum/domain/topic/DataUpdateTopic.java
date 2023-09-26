@@ -9,6 +9,6 @@ public record DataUpdateTopic(
         String title,
         String message,
         StatusTopic status,
-        Long id_course
+        Long idCourse
 ) {
 }

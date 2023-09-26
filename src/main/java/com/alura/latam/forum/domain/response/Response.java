@@ -26,7 +26,7 @@ public class Response {
     @JoinColumn(name = "id_topic")
     private Topic topic;
 
-    LocalDateTime creation_date;
+    LocalDateTime creationDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_author")
@@ -35,10 +35,10 @@ public class Response {
     private Boolean solution; // false
     private Boolean active;
 
-    public Response(String message, Topic topic, LocalDateTime creation_date, User author) {
+    public Response(String message, Topic topic, LocalDateTime creationDate, User author) {
         this.message = message;
         this.topic = topic;
-        this.creation_date = creation_date;
+        this.creationDate = creationDate;
         this.author = author;
         this.solution = false;
         this.active = true;

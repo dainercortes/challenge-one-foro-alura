@@ -13,4 +13,6 @@ import java.util.List;
 @Repository
 public interface ResponseRepository extends JpaRepository<Response, Long> {
     Page<Response> findByTopicId(Pageable pageable, Long id);
+
+    Page<Response> findByTopicIdAndActiveTrue(Pageable pageable, Long id);
 }

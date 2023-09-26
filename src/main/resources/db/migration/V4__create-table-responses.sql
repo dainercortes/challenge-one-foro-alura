@@ -5,5 +5,7 @@ CREATE TABLE IF NOT EXISTS `foro_alura`.`responses` (
   `creation_date` DATETIME NOT NULL,
   `id_author` VARCHAR(100) NOT NULL,
   `solution` TINYINT NOT NULL,
+  `active` TINYINT NOT NULL,
+
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;

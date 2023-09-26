@@ -10,11 +10,12 @@ import java.time.LocalDateTime;
 public record DataResponseTopic(Long id,
                                 String title,
                                 String message,
-                                LocalDateTime creation_date,
+                                LocalDateTime creationDate,
                                 StatusTopic status,
-                                Long id_author,
-                                Long id_course) {
+                                String author,
+                                String course) {
     public DataResponseTopic(Topic topic) {
-        this(topic.getId(), topic.getTitle(), topic.getMessage(), topic.getCreation_date(), topic.getStatus(), topic.getAuthor().getId(), topic.getCourse().getId());
+        this(topic.getId(), topic.getTitle(), topic.getMessage(), topic.getCreationDate(), topic.getStatus(), topic.getAuthor().getName(), topic.getCourse().getName());
+
     }
 }

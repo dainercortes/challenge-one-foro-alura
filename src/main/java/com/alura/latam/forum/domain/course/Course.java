@@ -19,9 +19,25 @@ public class Course {
     private Long id;
     private String name;
     private String category;
+    private Boolean active;
 
     public Course(String name, String category) {
         this.name = name;
         this.category = category;
+        this.active = true;
+    }
+
+    public void deleteCourse() {
+        this.active = false;
+    }
+
+    public void updateCourse(String name, String category) {
+        if (name != null) {
+            this.name = name;
+        }
+
+        if (category != null) {
+            this.category = category;
+        }
     }
 }

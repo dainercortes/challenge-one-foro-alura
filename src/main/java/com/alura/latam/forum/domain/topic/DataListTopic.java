@@ -11,13 +11,13 @@ import java.util.List;
 public record DataListTopic(Long id,
                             String title,
                             String message,
-                            LocalDateTime creation_date,
+                            LocalDateTime creatioDate,
                             StatusTopic status,
                             String author,
                             String course) {
 
     public DataListTopic(Topic topic) {
-        this(topic.getId(), topic.getTitle(), topic.getMessage(), topic.getCreation_date(),
+        this(topic.getId(), topic.getTitle(), topic.getMessage(), topic.getCreationDate(),
                 topic.getStatus(), topic.getAuthor().getName(), topic.getCourse().getName());
     }
 

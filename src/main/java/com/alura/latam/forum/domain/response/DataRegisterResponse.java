@@ -7,8 +7,8 @@ public record DataRegisterResponse(
         @NotBlank
         String message,
         @NotNull
-        Long id_topic,
+        Long idTopic,
         @NotNull
-        Long id_author
+        Long idAuthor
 ) {
 }

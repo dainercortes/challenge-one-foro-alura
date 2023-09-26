@@ -13,7 +13,7 @@ public record DataRegisterTopic(
         @NotBlank
         String message,
         @NotNull
-        Long id_author,
+        Long idAuthor,
         @NotNull
-        Long id_course) {
+        Long idCourse) {
 }

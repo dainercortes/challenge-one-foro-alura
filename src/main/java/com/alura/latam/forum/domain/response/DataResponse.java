@@ -13,12 +13,12 @@ import java.time.LocalDateTime;
 public record DataResponse(
         Long id,
         String message,
-        Long id_topic,
-        LocalDateTime creation_date,
-        Long id_author,
+        String topic,
+        LocalDateTime creationDate,
+        String author,
         Boolean solution) {
 
     public DataResponse(Response response) {
-        this(response.getId(), response.getMessage(), response.getTopic().getId(), response.getCreation_date(), response.getAuthor().getId(), response.getSolution());
+        this(response.getId(), response.getMessage(), response.getTopic().getTitle(), response.getCreationDate(), response.getAuthor().getName(), response.getSolution());
     }
 }

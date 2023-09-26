@@ -6,6 +6,8 @@ CREATE TABLE IF NOT EXISTS `foro_alura`.`topics` (
   `status` VARCHAR(100) NOT NULL,
   `id_author` BIGINT NOT NULL,
   `id_course` BIGINT NOT NULL,
+  `active` TINYINT NOT NULL,
+
   PRIMARY KEY (`id`),
   UNIQUE INDEX `title_UNIQUE` (`title` ASC) VISIBLE,
   UNIQUE INDEX `message_UNIQUE` (`message` ASC) VISIBLE)
