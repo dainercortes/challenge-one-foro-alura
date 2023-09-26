@@ -44,6 +44,8 @@ public class TopicService {
         var author = userRepository.findById(data.idAuthor()).get();
         var course = coursesRepository.findById(data.idCourse()).get();
 
+        topicRepository.existsByTitleAndMessage(data.title(), data.message());
+
         var topic = new Topic(data.title(), data.message(), LocalDateTime.now(), author, course);
         topicRepository.save(topic);
 
@@ -52,7 +54,7 @@ public class TopicService {
 
 
     public Page<DataListTopic> listTopics(Pageable pageable) {
-        var page = topicRepository.findAll(pageable).map(DataListTopic::new);
+        var page = topicRepository.findByActiveTrue(pageable).map(DataListTopic::new);
 
       return page;
     }
@@ -64,6 +66,8 @@ public class TopicService {
         validateTopicExists(id);
 
         Topic topic = topicRepository.getReferenceById(id);
+
+        validateTopicActive(topic.getActive());
 
         if (topic != null)  {
             Page<Response> responses = responseRepository.findByTopicIdAndActiveTrue(pageable, id);
@@ -153,9 +157,25 @@ public class TopicService {
         }
     }
 
+    private void validateTopicActive(Boolean active) {
+        if (active == false) {
+            throw new IntegrityValidation("El topico no esta disponible fue eliminado anteriormente");
+        }
+    }
+
+    private  void validateTitleAndMessageExists(String title, String message) {
+        if (!topicRepository.existsByTitleAndMessage(title, message)) {
+            throw new IntegrityValidation("El titulo y el mensaje son iguales a otro topico de la base de datos");
+        }
+    }
+
     private void validateUserActiveSesion(Long id) {
-        if (!id.equals(UserActiveSesion.idUser) || !UserActiveSesion.username.equals(userAdmin) ) {
-            throw new IntegrityValidation("El usuario que intenta actualizar no es el mismo que inicio sesion");
+        if (!id.equals(UserActiveSesion.idUser)) {
+            throw new IntegrityValidation("El usuario que intenta realizar la operacion no es el mismo que inicio sesion");
+        }
+
+        if (!id.equals(UserActiveSesion.idUser) && !UserActiveSesion.username.equals(userAdmin)) {
+            throw new IntegrityValidation("El usuario que intenta realizar la operacion no es el mismo que inicio sesion");
         }
     }
 }

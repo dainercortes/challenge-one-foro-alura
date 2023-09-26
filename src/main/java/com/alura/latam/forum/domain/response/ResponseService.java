@@ -90,8 +90,12 @@ public class ResponseService {
     }
 
     private void validateUserActiveSesion(Long id) {
-        if (!id.equals(UserActiveSesion.idUser) || UserActiveSesion.username.equals(userAdmin)) {
-            throw new IntegrityValidation("El usuario que intenta actualizar la respuesta no es el mismo que inicio sesion");
+        if (!id.equals(UserActiveSesion.idUser)) {
+            throw new IntegrityValidation("El usuario que intenta realizar la operacion no es el mismo que inicio sesion");
+        }
+
+        if (!id.equals(UserActiveSesion.idUser) && !UserActiveSesion.username.equals(userAdmin)) {
+            throw new IntegrityValidation("El usuario que intenta realizar la operacion no es el mismo que inicio sesion");
         }
     }
 }

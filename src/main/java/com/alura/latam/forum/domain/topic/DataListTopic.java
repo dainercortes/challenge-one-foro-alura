@@ -11,7 +11,7 @@ import java.util.List;
 public record DataListTopic(Long id,
                             String title,
                             String message,
-                            LocalDateTime creatioDate,
+                            LocalDateTime creationDate,
                             StatusTopic status,
                             String author,
                             String course) {

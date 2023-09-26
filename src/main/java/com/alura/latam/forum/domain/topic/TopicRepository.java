@@ -12,4 +12,7 @@ import java.util.List;
 public interface TopicRepository extends JpaRepository<Topic, Long> {
 
     Boolean existsByTitleAndMessage(String title, String message);
+
+    Page<Topic> findByActiveTrue(Pageable pageable);
+
 }
