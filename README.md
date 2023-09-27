@@ -38,6 +38,7 @@
 - [Acceso al proyecto](#acceso-al-proyecto)
 - [Tecnologías utilizadas](#tecnologias-utilizadas)
 - [Dependencias utilizadas](#dependencias-utilizadas)
+- [Documentacion](#docmentacion)
 - [Pruebas a la API](#pruebas-a-la-api)
 - [Autor](#autor)
 - [Licencia](#licencia)
@@ -353,16 +354,17 @@ CREATE DATABASE foro_alura;
 
 * `Spring Doc`
 
+## Documentacion
 
-## Pruebas a la API
-
-1. Puede testear la API accediendo a esta dirección desde el navegador: 
+1. Puedes acceder a la documentación de la API gracias a Swagger, solo escribe esta dirección en tu navegador: 
 
 ```bash
 http://localhost:8080/swagger-ui/index.html
 ```
 
-2. Puede testear la API desde el programa Insomnia, aquí les dejo un archivo ya configurado para que lo descarguen y luego lo importen en el programa:
+## Pruebas a la API
+
+1. Puede testear la API desde el programa Insomnia, aquí les dejo un archivo ya configurado para que lo descarguen y luego lo importen en el programa:
 
 *   Clic para descargar el [**Archivo**](https://drive.google.com/file/d/1iUEOA3Hg_wCwGSarpO9KmBjxc01yZLRx/view?usp=sharing)
 
