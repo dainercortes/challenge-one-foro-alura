@@ -356,7 +356,7 @@ CREATE DATABASE foro_alura;
 
 ## Documentacion
 
-1. Puedes acceder a la documentación de la API gracias a Swagger, solo escribe esta dirección en tu navegador: 
+1. Puedes acceder a la documentación de la API gracias a Swagger, solo escribe esta dirección en tu navegador cuando el proyecto se este ejecutando: 
 
 ```bash
 http://localhost:8080/swagger-ui/index.html
