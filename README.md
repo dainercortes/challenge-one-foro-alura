@@ -346,6 +346,10 @@ CREATE DATABASE foro_alura;
 
 * `MySQL Driver`
 
+* `JPA`
+  
+* `Hibernate`
+
 * `Validation`
 
 * `Spring Security`
